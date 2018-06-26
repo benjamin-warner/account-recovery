@@ -1,5 +1,8 @@
 <template>
-  <component :is="currentControl"></component>
+  <div id="app">
+    <h1>Account Recovery</h1>
+    <component :is="currentControl"></component>
+  </div>
 </template>
 
 <script>

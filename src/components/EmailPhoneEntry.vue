@@ -1,14 +1,24 @@
 <template>
   <div>
-    EmailPhoneEntry.
+    <form v-on:submit.prevent="submitSearch">
+      <input v-model.trim="emailOrPhone" placeholder="Email or phone!">
+      <button>Search</button>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
   name: 'EmailPhoneEntry',
-  props: {
-
+  data(){
+    return{
+      emailOrPhone: ''
+    }
+  },
+  methods: {
+    submitSearch: function(){
+      console.log(this.emailOrPhone);
+    }
   }
 }
 </script>
