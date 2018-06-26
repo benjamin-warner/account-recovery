@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <h1>Account Recovery</h1>
-    <EmailPhoneEntry/>
-  </div>
+  <component :is="currentControl"></component>
 </template>
 
 <script>
@@ -12,6 +9,11 @@ export default {
   name: 'app',
   components: {
     EmailPhoneEntry
+  },
+  data(){
+    return{
+      currentControl: 'EmailPhoneEntry'
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="email-phone-entry">
+  <div>
     Sup.
   </div>
 </template>
