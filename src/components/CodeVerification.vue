@@ -1,12 +1,12 @@
 <template>
   <div>
-    EmailPhoneEntry.
+    CodeVerification.
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EmailPhoneEntry',
+  name: 'CodeVerification',
   props: {
 
   }

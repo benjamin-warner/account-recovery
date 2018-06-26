@@ -4,11 +4,15 @@
 
 <script>
 import EmailPhoneEntry from './components/EmailPhoneEntry.vue'
+import CodeMethodSelection from './components/CodeMethodSelection.vue'
+import CodeVerification from './components/CodeVerification.vue'
+import PasswordReset from './components/PasswordReset.vue'
 
 export default {
   name: 'app',
   components: {
-    EmailPhoneEntry
+    EmailPhoneEntry, CodeMethodSelection, 
+    CodeVerification, PasswordReset
   },
   data(){
     return{

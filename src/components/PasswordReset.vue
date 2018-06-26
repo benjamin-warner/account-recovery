@@ -1,12 +1,12 @@
 <template>
   <div>
-    EmailPhoneEntry.
+    PasswordReset.
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EmailPhoneEntry',
+  name: 'PasswordReset',
   props: {
 
   }

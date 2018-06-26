@@ -1,12 +1,12 @@
 <template>
   <div>
-    EmailPhoneEntry.
+    CodeMethodSelection.
   </div>
 </template>
 
 <script>
 export default {
-  name: 'EmailPhoneEntry',
+  name: 'CodeMethodSelection',
   props: {
 
   }
