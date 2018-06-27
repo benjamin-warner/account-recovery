@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Account Recovery</h1>
-    <component :is="currentControl"></component>
+    <component :is="currentControl" v-on:loadVerification="currentControl = 'CodeMethodSelection'"></component>
   </div>
 </template>
 

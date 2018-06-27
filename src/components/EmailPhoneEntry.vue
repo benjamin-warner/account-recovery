@@ -45,8 +45,10 @@ export default {
       return emailRegex.test(String(emailAddress).toLowerCase());
     },
 
-    getRecovery(){
-
+    getRecovery(contact){
+      // eslint-disable-next-line
+      console.log('emitting...' + contact)
+      this.$emit('loadVerification')//, {userId: 1234, via: contact});
     }
   }
 }
