@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h3>
+      EmailPhoneEntry
+    </h3>
     <form v-on:submit.prevent="submitSearch">
       <input v-model.trim="emailOrPhone" placeholder="Email or phone!">
       <button>Search</button>
@@ -8,8 +11,12 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'EmailPhoneEntry',
+  props: {
+    currentWorkingObject: ''
+  },
   data(){
     return{
       emailOrPhone: ''
@@ -20,11 +27,11 @@ export default {
       var searchQuery = this.emailOrPhone;
       if(this.isValidPhone(searchQuery)){
         //var phoneParams = this.formatUrlParams(searchQuery);
-        this.getRecovery();
+        this.getRecovery(searchQuery);
       }
       else if(this.isValidEmail(searchQuery)){
         //var emailParams = this.formatUrlParams(searchQuery);
-        this.getRecovery();
+        this.getRecovery(searchQuery);
       }
     },
 
@@ -47,8 +54,15 @@ export default {
 
     getRecovery(contact){
       // eslint-disable-next-line
-      console.log('emitting...' + contact)
-      this.$emit('loadVerification')//, {userId: 1234, via: contact});
+      console.log('Finding account for' + contact)
+      this.$emit('loadNextControl', 
+      {
+        userId: 1234, contacts:[
+        {display: 'b*****2@kent.edu', type: 'email'}, 
+        {display: '1*******9', type: 'phone'}
+        ]
+      }
+      );
     }
   }
 }

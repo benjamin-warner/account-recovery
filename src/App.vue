@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <h1>Account Recovery</h1>
-    <component :is="currentControl" v-on:loadVerification="currentControl = 'CodeMethodSelection'"></component>
+    <component :is="currentControl" v-bind:currentWorkingObject="currentWorkingObject"
+    v-on:loadNextControl="loadNextControl($event)"
+    v-on:loadPreviousControl="loadPreviousControl($event)">
+    </component>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import EmailPhoneEntry from './components/EmailPhoneEntry.vue'
 import CodeMethodSelection from './components/CodeMethodSelection.vue'
 import CodeVerification from './components/CodeVerification.vue'
@@ -19,7 +23,39 @@ export default {
   },
   data(){
     return{
-      currentControl: 'EmailPhoneEntry'
+      componentIndex: 0,
+      currentControl: 'EmailPhoneEntry',
+      currentWorkingObject: ''
+    }
+  },
+  methods:{
+    loadNextControl(dataToSend){
+      this.componentIndex++;
+      this.currentWorkingObject = dataToSend;
+      this.loadComponent();
+    },
+    loadPreviousControl(dataToSend){
+      this.componentIndex--;
+      this.currentWorkingObject = dataToSend;
+      this.loadComponent();
+    },
+    loadComponent(){
+      switch(this.componentIndex){
+        case 0: 
+          this.currentControl = 'EmailPhoneEntry';
+          break;
+        case 1: 
+          this.currentControl = 'CodeMethodSelection';
+          break;
+        case 2: 
+          this.currentControl = 'CodeVerification';
+          break;
+        case 3: 
+          this.currentControl = 'PasswordReset';
+          break;
+        default:
+          break;
+      }
     }
   }
 }
