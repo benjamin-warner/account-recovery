@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>
-    CodeMethodSelection.
+    Choose verification code method.
     </h3>
     <div v-for="(contact, index) in currentWorkingObject.contacts" :key="index">
       <a href="#" v-on:click="selectMethod(index)">
@@ -32,7 +32,7 @@ export default {
   methods: {
     selectMethod(index){
       this.methodIndex = index;
-      console.log(this.methodIndex)
+      console.log("Current selection: " + this.selectedMethod.display);
     },
 
     sendCode(){

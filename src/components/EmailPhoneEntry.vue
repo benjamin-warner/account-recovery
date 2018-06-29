@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>
-      EmailPhoneEntry
+      Find account.
     </h3>
     <form v-on:submit.prevent="submitSearch">
       <input v-model.trim="emailOrPhone" placeholder="Email or phone!">
@@ -54,7 +54,7 @@ export default {
 
     getRecovery(contact){
       // eslint-disable-next-line
-      console.log('Finding account for' + contact)
+      console.log('Finding account for: ' + contact)
       this.$emit('loadNextControl', 
       {
         userId: 1234, contacts:[
